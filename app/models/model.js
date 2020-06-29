@@ -1,0 +1,35 @@
+// module.exports = mongoose => {
+//   var schema = mongoose.Schema(
+//     {
+//       name: String,
+//       lastname: String,
+//       active: Boolean
+//     },
+//     { timestamps: true }
+//   );
+
+//   schema.method("toJSON", function() {
+//     const { __v, _id, ...object } = this.toObject();
+//     object.id = _id;
+//     return object;
+//   });
+
+//   const Student = mongoose.model("estudiante", schema);
+//   return Student;
+// };
+
+module.exports = mongoose => {
+  const Student = mongoose.model(
+    "student",
+    mongoose.Schema(
+      {
+        name: String,
+        lastname: String,
+        active: Boolean
+      },
+      { timestamps: true }
+    )
+  );
+
+  return Student;
+};
